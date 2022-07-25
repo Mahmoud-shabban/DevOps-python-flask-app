@@ -1,0 +1,46 @@
+# Githb Actions (CI) workflow to buil and run unittest after a new commit
+
+# 1- name the workflow
+name: MyWorkFlow
+
+# 2- set the Event
+on: [push]
+
+# 3- set jobs
+jobs:
+
+  # first job
+  Build:
+    
+
+    # 1- set the os of the job
+    runs-on: ubuntu-latest
+    # 2- python version
+    python-version: 3.8
+
+    # job Steps and Actions
+
+    # 3- Define the steps on to follow
+    steps:
+    # uses the checkout version 2 (I don't know what this mean)
+    - uses: actions/checkout@v2
+    
+    # step 1
+    - name: Setup Python ${{python-version}}
+      uses: actions/setup-python@v2
+      with: 
+        python-version: python-version
+    # step 2
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest
+        
+        if [ -f requirements.txt] ; then
+        pip install -r requirements.txt;
+        fi 
+    # step 3
+    # run the test
+    - name: test with pytest
+      run: |
+        pytest
