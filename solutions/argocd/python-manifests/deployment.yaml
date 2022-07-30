@@ -21,7 +21,7 @@ spec:
         app: python-helloworld
     spec:
       containers:
-      - image: coralsparrow/github-actions:latest
+      - image: coralsparrow/github-actions:v1.0.0
         imagePullPolicy: IfNotPresent
         name: python-helloworld
         resources:
