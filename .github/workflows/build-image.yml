@@ -1,0 +1,13 @@
+# yaml to build and push image to github
+name:  build and push
+
+on: 
+  push:
+    branches: [main]
+
+jobs:
+
+  Build:
+
+    runs-on: ubuntu-latest
+    
