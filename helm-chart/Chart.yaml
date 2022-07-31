@@ -1,0 +1,9 @@
+apiVersion: v1
+name: nginx-deployment
+description: deploy nginx
+keywords:
+- nginx
+version: 1.0.0
+maintainers:
+- name: mahmoud-shabban 
+  email: mahmoudshabban300@gmail.com
